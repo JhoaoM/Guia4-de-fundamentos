@@ -13,6 +13,11 @@ static string ReemplazarPalabra(string cadena, string vieja, string nueva)
     return cadena.Replace(vieja, nueva);
 }
 
+static string[] SepararPalabras(string cadena)
+{
+    return cadena.Split(' ');
+}
+
 Console.WriteLine("PARTE 1: CADENAS");
 string texto = "C# es un lenguaje fácil de aprender y muy usado";
 Console.WriteLine($"Texto original: {texto}");
@@ -25,3 +30,10 @@ Console.WriteLine($"La palabra 'lenguaje' empieza en la posición: {posicion}");
 
 string textoNuevo = ReemplazarPalabra(texto, "fácil", "divertido");
 Console.WriteLine($"Texto con reemplazo: {textoNuevo}");
+
+string[] palabras = SepararPalabras(texto);
+Console.WriteLine($"Cantidad de palabras: {palabras.Length}");
+for (int i = 0; i < palabras.Length; i++)
+{
+    Console.WriteLine($"Palabra {i}: {palabras[i]}");
+}
